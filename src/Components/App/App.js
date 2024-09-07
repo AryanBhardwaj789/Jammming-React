@@ -52,6 +52,10 @@ function App () {
       setPlaylistName(name);
     }
 
+    function savePlaylist() {
+      const trackUrls = playlistTracks.map((t) => t.url);
+    }
+
     return (
         <div>
         <h1>
@@ -64,7 +68,7 @@ function App () {
             {/* <!-- Add a SearchResults component --> */}
             <SearchResults userSearchResult={searchResults} onAdd={addTrack} />
             {/* <!-- Add a Playlist component --> */}
-            <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} />
+            <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} onSave={savePlaylist}/>
           </div>
         </div>
       </div>
