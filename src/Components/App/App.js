@@ -42,6 +42,16 @@ function App () {
         setPlaylistTracks(newTrack);
       }
     }
+
+    function removeTrack(track) {
+      const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
+      setPlaylistTracks(existingTrack);
+    }
+
+    function updatePlaylistName(name) {
+      setPlaylistName(name);
+    }
+
     return (
         <div>
         <h1>
@@ -54,7 +64,7 @@ function App () {
             {/* <!-- Add a SearchResults component --> */}
             <SearchResults userSearchResult={searchResults} onAdd={addTrack} />
             {/* <!-- Add a Playlist component --> */}
-            <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
+            <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} />
           </div>
         </div>
       </div>
