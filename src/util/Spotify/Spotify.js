@@ -1,6 +1,6 @@
 let accessToken = "";
 const clientID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const redirectUrl = "http://localhost:3000/";
+const redirectUrl = "https://jammmify.vercel.app/";
 
 const Spotify = {
   getAccessToken() {
